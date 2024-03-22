@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Question 1</h2>
+    <p id="q1a">a</p>
+    <p id="q1b">b</p>
+    <p id="q1c">c</p>
+    <p id="q1d">d</p>
+    <br>
+    <h2>Question 2</h2>
+    <p id="q2a">a</p>
+    <p id="q2b">b</p>
+    <p id="q2c">c</p>
+    <br>
+    <h2>Question 3</h2>
+    <p id="q3a">d</p>
+    <p id="q3b">d</p>
+    <p id="q3c">d</p>
+    <p id="q3d">d</p>
+    <p id="q3e">d</p>
+    <br>
+    <h2>Question 4</h2>
+    <p id="q4a">d</p><br>
+    <h2>Question 5</h2>
+    <form id="num_input">
+        <label for="in_num1">Please enter a number: </label>
+        <input type="text" id="in_num1"><br>
+        <label for="in_num2">Please enter a second number: </label>
+        <input type="text" id="in_num2"><br>
+
+        <input type="button" id="sum_button" value="Calculate sum" onclick="addNums()">
+        <span id="sum_output" name="sum_output">*</span><br>
+
+    </form><br>
+    <form id="years_input">
+        <label for="years">Please enter your age: </label>
+        <input type="number" id="years"><br>
+
+        <input type="button" id="years_button" value="Age" onclick="getYears()">
+        <span id="years_output" name="years_output">*</span><br>
+
+    </form>
+
+        <script>
+
+            //Question 1
+            let num1 = 10;
+            let num2 = 5;
+
+
+            document.getElementById("q1a").innerHTML = ""+ num1 + " + " +  num2 +" = "+ (num1+num2);
+            document.getElementById("q1b").innerHTML = ""+ num1 + " - " +  num2 +" = "+ (num1-num2);
+            document.getElementById("q1c").innerHTML = ""+ num1 + " x " +  num2 +" = "+ (num1*num2);
+            document.getElementById("q1d").innerHTML = ""+ num1 + " divided by " +  num2 +" = "+ (num1/num2);
+
+
+            //Question 2
+            let firstName = "Michael"
+            let lastName = "Filar" 
+
+            document.getElementById("q2a").innerHTML = "My first name is "+firstName;
+            document.getElementById("q2b").innerHTML = "My last name is "+lastName;
+            document.getElementById("q2c").innerHTML = "My full name is " + (firstName+lastName);
+
+            //Question 3
+
+            let x = 5;
+
+            function myfunction() {
+			    var y = "10"; //local variable
+
+			    document.getElementById("q3b").innerHTML = "y = "+y; 
+		    }
+            myfunction();
+            document.getElementById("q3a").innerHTML = "x = "+x;
+
+            x = 6;
+            y = 11;
+
+            document.getElementById("q3c").innerHTML = "x = "+x;
+            document.getElementById("q3d").innerHTML = "y = "+y;
+            document.getElementById("q3e").innerHTML = "Seems to work fine for me."
+
+
+            //question 4
+
+            let counter = 0;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+
+            document.getElementById("q4a").innerHTML = "Counter = "+counter;
+
+            //Question 5
+
+
+            function addNums() {
+                let number1 = Number(document.getElementById("in_num1").value);
+                let number2 = Number(document.getElementById("in_num2").value);
+
+                document.getElementById("sum_output").innerHTML = (number1+number2);
+                return false;
+            }
+
+            function getYears() {
+                let years = document.getElementById("years").value;
+
+                document.getElementById("years_output").innerHTML = String(years) + " years old";
+                return false;
+            }
+
+        </script>
+    
+
+
+</body>
+</html>
